@@ -7,5 +7,8 @@ pub fn build(b: *std.Build) void {
         .optimize = .ReleaseSmall,
         .target = b.graph.host,
     });
+    
+    exe.linkLibC();
+
     b.installArtifact(exe);
 }

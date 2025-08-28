@@ -229,7 +229,7 @@ fn initLicenses(allocator: Allocator) !std.StringHashMap([]const u8) {
 }
 
 pub fn main() !void {
-    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    var arena = std.heap.ArenaAllocator.init(std.heap.c_allocator);
     defer arena.deinit();
     const allocator = arena.allocator();
 
